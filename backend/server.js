@@ -10,7 +10,6 @@ import { v2 as cloudinary } from "cloudinary";
 import { app, server } from "./socket/socket.js";
 import job from "./cron/cron.js";
 import cors from 'cors';
-import path from 'path';
 
 
 
