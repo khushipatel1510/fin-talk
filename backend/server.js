@@ -21,7 +21,7 @@ job.start();
 const PORT = process.env.PORT || 3000;
 const __dirname = path.resolve();
 app.use(cors({
-	origin: 'https://mern-azure-web-app-c5frbpfca7fgfhgv.centralindia-01.azurewebsites.net/api', // frontend URL
+	origin: 'https://mern-f9crchd5cmath6gn.centralindia-01.azurewebsites.net', // frontend URL
 	credentials: true
   }));
 
