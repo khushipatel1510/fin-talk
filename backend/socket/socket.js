@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
 	cors: {
-		origin: "https://mern-azure-web-app-c5frbpfca7fgfhgv.centralindia-01.azurewebsites.net/api",
+		origin: "https://mern-f9crchd5cmath6gn.centralindia-01.azurewebsites.net",
 		methods: ["GET", "POST"],
 	},
 });
