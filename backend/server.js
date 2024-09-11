@@ -10,6 +10,8 @@ import { v2 as cloudinary } from "cloudinary";
 import { app, server } from "./socket/socket.js";
 import job from "./cron/cron.js";
 import cors from 'cors';
+import path from 'path';
+
 
 
 dotenv.config();
@@ -20,7 +22,7 @@ job.start();
 const PORT = process.env.PORT || 3000;
 const __dirname = path.resolve();
 app.use(cors({
-	origin: 'http://localhost:3000', // frontend URL
+	origin: 'https://mern-azure-web-app-c5frbpfca7fgfhgv.centralindia-01.azurewebsites.net', // frontend URL
 	credentials: true
   }));
 
@@ -50,5 +52,10 @@ if (process.env.NODE_ENV === "production") {
 		res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
 	});
 }
+
+app.use(express.static("./client/build"));
+app.get("*" , (req , res) => {
+	res.sendFile(path.resolve(__dirname , "client" , "build" , "index.html"))
+});
 
 server.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`));
